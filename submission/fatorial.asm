@@ -10,6 +10,8 @@ UM K = 1
 @ /0400  ; Início da sub-rotina
 LD N      ; Carrega o valor de N para AC
 JZ FIM    ; Se AC == 0, pula para FIM (fatorial de 0 é 1)
+LD UM
+ST RES
 
 LOOP: 
     LD N      ; Carrega o valor de N para AC
