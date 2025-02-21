@@ -3,15 +3,15 @@ JP /0400
 
 
 @ /0100
-N K = 0
+N K = 1
 RES K = 1
 UM K = 1
 
 @ /0400  ; Início da sub-rotina
-LD N      ; Carrega o valor de N para AC
-JZ FIM    ; Se AC == 0, pula para FIM (fatorial de 0 é 1)
 LD UM
 ST RES
+LD N      ; Carrega o valor de N para AC
+JZ FIM    ; Se AC == 0, pula para FIM (fatorial de 0 é 1)
 
 LOOP: 
     LD N      ; Carrega o valor de N para AC
