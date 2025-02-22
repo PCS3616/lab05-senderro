@@ -1,11 +1,19 @@
+@ /0000
+JP /0500
+
+
 @ /0500
 ITER1 K =0      ; Contador 
 DOIS   K =2     ; Constante 2
 UM     K =1     ; Constante 1
 ZERO   K =0     ; Constante 0
 SOMA   K =0     ; Acumulador dos quadrados
-ENDER  K /0100  ; Endereço base para armazenar os quadrados
+ENDER  K /0102  ; Endereço base para armazenar os quadrados
 SESQUATRO K =64  ; Limite (64 números, de 0 a 63)
+
+LD ZERO;
+MM 0100;
+
 
 LOOP1 LD ITER1
 SB SESQUATRO
@@ -15,7 +23,6 @@ ML DOIS     ; Multiplica ITER1 por 2
 AD UM        ;
 AD SOMA      ; Soma ao acumulador
 MM SOMA      ; Atualiza SOMA
-
 LD SOMA
 MM &ENDER     ; Armazena o quadrado na memória
 LD ENDER
