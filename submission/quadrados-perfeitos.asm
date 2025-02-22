@@ -1,5 +1,5 @@
 @ /0500
-ITER1 K =0      ; Contador externo (N)
+ITER1 K =0      ; Contador 
 DOIS   K =2     ; Constante 2
 UM     K =1     ; Constante 1
 ZERO   K =0     ; Constante 0
@@ -10,13 +10,13 @@ SESQUATRO K =64  ; Limite (64 números, de 0 a 63)
 LOOP1 LD ITER1
 SB SESQUATRO
 JZ FIM       ; Se ITER1 == 64, termina
-ML ITER1     ; Multiplica ITER2 por 2
+LD ITER1
+ML DOIS     ; Multiplica ITER1 por 2
 AD UM        ;
 AD SOMA      ; Soma ao acumulador
 MM SOMA      ; Atualiza SOMA
-JZ SALVAR    ; Se ITER2 == ITER1, vai salvar
-SALVAR LD SOMA
 
+LD SOMA
 MM &ENDER     ; Armazena o quadrado na memória
 LD ENDER
 AD DOIS      ; Próxima posição de memória
