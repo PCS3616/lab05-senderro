@@ -8,7 +8,7 @@ GD 0000      ; Lê segundo dígito de x
 MM X_D2
 
 GD 0000      ; Lê espaço (ignorar)
-
+GD 0000      ; Lê espaço (ignorar)
 
 GD 0000      ; Lê primeiro dígito de y
 MM Y_D1
@@ -43,7 +43,7 @@ AD Y_VAL
 MM RESULT
 
 LD RESULT
-ML VALOR_100
+ML HEX_100
 MM RESULT_TEMP
 
 LD HEX_A_1000
@@ -74,9 +74,9 @@ Y_VAL      K /0000  ; Valor numérico de Y
 RESULT     K /0000  ; Resultado da soma
 RESULT_TEMP K /0000 ; Valor temporario
 CONST_30   K /0030  ; Constante para conversão ASCII
-CONST_10   K /000A  ; Constante 10 (multiplicação)
+CONST_10   K /0010  ; Constante 10 (multiplicação)
 HEX_A      K /000A  ; Constante A para checar carry
 HEX_A_1000 K /A000
 HEX_100    K /0100  ; Constante para ajuste de carry
-VALOR_100 K =100;
+
 HEX_3030 K /3030
