@@ -1,7 +1,4 @@
 @ /000
-LD HEX_A
-PD 0001
-HM /0000  
     JP START  ; Pula para o início do código
 
 @ /100
@@ -80,6 +77,6 @@ CONST_30   K /0030  ; Constante para conversão ASCII
 CONST_10   K /0010  ; Constante 10 (multiplicação)
 HEX_A      K /000A  ; Constante A para checar carry
 HEX_A_1000 K /A000
-HEX_100    K /0100  ; Constante para ajuste de carry
+HEX_100    K /1000  ; Constante para ajuste de carry
 
 HEX_3030 K /3030
