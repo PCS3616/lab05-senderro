@@ -2,13 +2,13 @@
     JP START  ; Pula para o início do código
 
 @ /100
-START GD /000
+START GD 0000
 SB HEX_3030
 MM X_NUM
 
-GD /000
+GD 0000
 
-GD /000
+GD 0000
 SB HEX_3030
 MM Y_NUM
 
@@ -24,7 +24,7 @@ MM RESULT;
 
 LD RESULT
 AD HEX_3030
-PD /001
+PD /100
 HM /0000
 
 @ /400
