@@ -43,5 +43,4 @@ AD UM        ; Incrementa ITER1 (próximo número)
 MM ITER1
 JP LOOP1     ; Repete para o próximo número
 
-FIM:
-    HM /0000     ; Halt (fim da execução)
+FIM HM /0000     ; Halt (fim da execução)
