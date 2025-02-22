@@ -1,48 +1,47 @@
-@ /0000
-JP /0500
+@ /000
+	JP BEGIN
 
 @ /0500
-COUNT      K =0      ; Contador principal
-TWO        K =2      ; Constante 2
-ONE        K =1      ; Constante 1
-ZERO_VAL   K =0      ; Constante 0
-SUM_SQR    K =0      ; Acumulador dos quadrados
-MEM_ADDR   K /0102   ; Endereço base para armazenar os quadrados
-LIMIT      K =64     ; Limite (64 números, de 0 a 63)
-TMP_VAL    K /0000   ; Valor temporário para armazenar quadrados
-STORE_OP   MM /0000  ; Operação de armazenamento
-SAVE_ADDR  K /0102   ; Endereço inicial para armazenar os quadrados
+BEGIN   LD ZERO  ; inicializando o codigo
+MM ITERADOR
+MM SOMADOR
+MM PROIMPAR
 
-LD ZERO_VAL
-MM /0100
+MAIN_LOOP	LD SOMADOR  ;Carrega o valor atual do SOMADOR
+AD PROIMPAR ;Soma o prox num
+MM SOMADOR 
+LD ITERADOR 
+ML DOIS 
+AD UM   
+MM PROIMPAR 
+LD ITERADOR  
+AD UM 
+MM ITERADOR  
+LD SOMADOR
+MM VARTEMPORARIA
+LD MEM_ADDR
+AD STORE_OP
+MM WRITE_LOC
+LD VARTEMPORARIA
 
-LOOP_CALC   LD COUNT
-            SB LIMIT
-            JZ END_LOOP  ; Se COUNT == 64, termina
+WRITE_LOC	MM /0000
+LD MEM_ADDR
+AD DOIS
+MM MEM_ADDR
+SB LIMIT_VAL ; Verifica se ITERADOR eh 64
+JZ END_PROC
+JP MAIN_LOOP
 
-            LD COUNT
-            ML TWO       ; Multiplica COUNT por 2
-            AD ONE
-            AD SUM_SQR   ; Soma ao acumulador
-            MM SUM_SQR   ; Atualiza SUM_SQR
+END_PROC	HM =0
 
-            LD SUM_SQR
-            MM TMP_VAL   ; Armazena temporariamente o valor calculado
-
-            LD SAVE_ADDR
-            AD STORE_OP
-            MM WRITE_LOC  ; Define o endereço correto para armazenar
-
-            LD TMP_VAL
-WRITE_LOC   MM /0000      ; Armazena o valor no endereço calculado
-
-            LD SAVE_ADDR
-            AD TWO
-            MM SAVE_ADDR  ; Incrementa o endereço de armazenamento
-
-            LD COUNT
-            AD ONE        ; Incrementa COUNT (próximo número)
-            MM COUNT
-            JP LOOP_CALC  ; Repete para o próximo número
-
-END_LOOP    HM /0000      ; Halt (fim da execução)
+@ /0600
+ITERADOR	K /0000 
+SOMADOR	K /0000
+PROIMPAR	K /0001
+DOIS	K /0002
+UM	K /0001
+ZERO K =0
+LIMIT_VAL	K /0180
+VARTEMPORARIA	K /0000
+STORE_OP	MM /000
+MEM_ADDR	K /100
