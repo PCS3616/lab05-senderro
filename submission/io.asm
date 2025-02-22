@@ -1,4 +1,7 @@
 @ /000
+LD HEX_A
+PD 0001
+HM /0000  
     JP START  ; Pula para o início do código
 
 @ /100
