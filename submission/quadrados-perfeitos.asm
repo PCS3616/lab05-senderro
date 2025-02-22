@@ -24,7 +24,7 @@ AD UM        ;
 AD SOMA      ; Soma ao acumulador
 MM SOMA      ; Atualiza SOMA
 LD SOMA
-MM &ENDER     ; Armazena o quadrado na memória
+MM ENDER     ; Armazena o quadrado na memória
 LD ENDER
 AD DOIS      ; Próxima posição de memória
 MM ENDER
