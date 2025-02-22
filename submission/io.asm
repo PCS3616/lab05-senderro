@@ -2,14 +2,14 @@
     JP START  ; Pula para o início do código
 
 @ /100
-START   GD 0000      ; Lê x
+START GD 0000
 SB HEX_3030
 MM X_NUM
 
-GD 0000      ; Lê espaço (ignorar)
-GD 0000      ; Lê espaço (ignorar)
+GD 0000
 
-GD 0000      ; Lê y
+
+GD 0000
 SB HEX_3030
 MM Y_NUM
 
@@ -37,8 +37,7 @@ JP FINAL;
 FINAL LD RESULT
 AD HEX_3030
 PD 0001
-
-HM /0000     ; Fim do programa
+HM /0000
 
 @ /400
 X_NUM      K /0000  ; Primeiro dígito de X
